@@ -6,9 +6,7 @@ import {TablaUsuariosComponent} from './usuarios/tabla-usuarios/tabla-usuarios.c
 const routes: Routes = [
   {
     path: '',
-    component: TablaUsuariosComponent, children: [
-      {path: '', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)}
-    ]
+    component: TablaUsuariosComponent
   }
 ];
 

@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
 import { TablaUsuariosComponent } from './usuarios/tabla-usuarios/tabla-usuarios.component';
 import {UsuariosModule} from './usuarios/usuarios.module';
+import {AppService} from './app.service';
 
 @NgModule({
   declarations: [
@@ -12,10 +14,13 @@ import {UsuariosModule} from './usuarios/usuarios.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     UsuariosModule
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
