@@ -1,16 +1,28 @@
-<table>
-  <thead>
-    <td>Nombre de usuario</td>
-    <td>Fecha de nacimiento</td>
-    <td>Edad</td>
-    <td></td>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{user.nombre}}</td>
-      <td>{{user.fechaNacimiento}}</td>
-      <td>{{user.edad}}</td>
-      <td>{{user.direccion}}</td>
-    </tr>
-  </tbody>
-</table>
+<div style="width: 1000px; margin: 0 auto;">
+
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaNacimiento">
+      <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaNacimiento}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edad">
+      <th mat-header-cell *matHeaderCellDef> Edad </th>
+      <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="domicilio">
+      <th mat-header-cell *matHeaderCellDef> Domicilio </th>
+      <td mat-cell *matCellDef="let element"> {{element.domicilio}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+

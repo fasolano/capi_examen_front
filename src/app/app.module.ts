@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { TablaUsuariosComponent } from './usuarios/tabla-usuarios/tabla-usuarios.component';
 import {UsuariosModule} from './usuarios/usuarios.module';
 import {AppService} from './app.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {AppService} from './app.service';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    UsuariosModule
+    UsuariosModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AppService

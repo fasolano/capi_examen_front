@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service';
 import {User} from '../../app.models';
-import {Observable} from 'rxjs';
+import {MatTableModule} from '@angular/material';
 
 @Component({
   selector: 'app-tabla-usuarios',
@@ -9,8 +9,8 @@ import {Observable} from 'rxjs';
   styleUrls: ['./tabla-usuarios.component.css']
 })
 export class TablaUsuariosComponent implements OnInit {
-
-  public users = [];
+  public displayedColumns: string[] = ['nombre', 'fechaNacimiento', 'edad', 'domicilio'];
+  public users: User[] = [];
   constructor(public appService: AppService) { }
   ngOnInit() {
     this.getUsers();
@@ -19,6 +19,5 @@ export class TablaUsuariosComponent implements OnInit {
     this.appService.getUsers().subscribe(data => {
       this.users = data;
     });
-    console.log(this.users[0]);
   }
 }
