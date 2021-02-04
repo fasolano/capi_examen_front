@@ -10,12 +10,15 @@ import {Observable} from 'rxjs';
 })
 export class TablaUsuariosComponent implements OnInit {
 
-  public users: Observable<User[]>;
+  public users = [];
   constructor(public appService: AppService) { }
   ngOnInit() {
     this.getUsers();
   }
   private getUsers() {
-    this.users = this.appService.getUsers();
+    this.appService.getUsers().subscribe(data => {
+      this.users = data;
+    });
+    console.log(this.users[0]);
   }
 }
