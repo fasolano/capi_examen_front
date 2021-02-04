@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TablaUsuariosComponent } from './usuarios/tabla-usuarios/tabla-usuarios.component';
+import {UsuariosModule} from './usuarios/usuarios.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UsuariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
